@@ -1,7 +1,7 @@
 // Unique values
 const menu = [
     {
-        name: 'pancakes',
+        name: ['pancakes'],
         category: 'breakfast',
     },
     {
@@ -34,6 +34,10 @@ const categories =['all',...new Set(menu.map((x) => x.category))];
 console.log(categories);
 
 const result = document.getElementById('result').innerHTML = 
-categories.map((category) => {
+categories.map((category,i) => {
     return `<button>${category}</button>`
 }).join(' ');
+
+// categories.map((category,i) => {
+//     return `<button id=\`menus${i*12}\`>${category}</button>`
+// }).join(' ');
